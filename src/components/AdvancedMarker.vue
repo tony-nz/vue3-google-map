@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, PropType, toRef, provide, computed, inject, markRaw, onBeforeUnmount, ref, watch } from "vue";
-import { advancedMarkerSymbol, apiSymbol, mapSymbol, markerClusterSymbol } from "../shared/index";
+import { markerSymbol, apiSymbol, mapSymbol, markerClusterSymbol } from "../shared/index";
 import equal from "fast-deep-equal";
 
 const markerEvents = ["click", "drag", "dragend", "dragstart", "gmp-click"];
@@ -128,7 +128,7 @@ export default defineComponent({
       }
     });
 
-    provide(advancedMarkerSymbol, marker);
+    provide(markerSymbol, marker);
 
     expose({ marker });
 
