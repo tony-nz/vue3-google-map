@@ -98,8 +98,9 @@ export default defineComponent({
             marker.value?.addListener(event, (e: unknown) => emit(event, e));
           });
 
+          const content = marker.value.content as HTMLElement;
+          console.log("Animation: ", animation.value);
           if (animation.value) {
-            const content = marker.value.content as HTMLElement;
             if (animation.value === Animation.Drop && !recreatingMarker) {
               content.addEventListener("animationend", () => {
                 content.classList.remove("drop");
@@ -107,9 +108,9 @@ export default defineComponent({
               intersectionObserver.observe(content);
             } else if (animation.value === Animation.Bounce) {
               content.classList.add("bounce");
-            } else {
-              content.classList.remove("drop", "bounce");
             }
+          } else {
+            content.classList.remove("drop", "bounce");
           }
         }
       },
