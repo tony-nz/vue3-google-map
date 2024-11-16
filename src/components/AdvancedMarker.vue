@@ -107,6 +107,8 @@ export default defineComponent({
               intersectionObserver.observe(content);
             } else if (animation.value === Animation.Bounce) {
               content.classList.add("bounce");
+            } else {
+              content.classList.remove("drop", "bounce");
             }
           }
         }
