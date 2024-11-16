@@ -99,7 +99,6 @@ export default defineComponent({
           });
 
           const content = marker.value.content as HTMLElement;
-          console.log("Animation: ", animation.value);
           if (animation.value) {
             if (animation.value === Animation.Drop && !recreatingMarker) {
               content.addEventListener("animationend", () => {
